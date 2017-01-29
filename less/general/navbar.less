@@ -1,0 +1,80 @@
+//
+// Navbars (Redux)
+// --------------------------------------------------
+
+.header {
+	z-index: 10030;
+}
+
+.navbar {
+
+	> .container {
+		padding-left: 20px;
+		padding-right: 20px;
+		width: auto !important;
+	}
+}
+
+.navbar-right {
+	float: right !important;
+}
+
+.navbar-left {
+	float: left !important;
+}
+
+.navbar {
+	font-family: @navbarFontFamily;
+
+	.navbar-brand {
+		// Vertically center the text given @navbar-height
+		//line-height: (@navbar-height / 2) + @navbarBorderHeight; // depraced since BS3
+		//padding-top: 16px;
+		//padding-bottom: 13px;
+		padding: 0;
+		height: auto;
+		line-height: @navbar-height;
+		font-size: 18px;
+		width: @sidebarWidth - 20px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow-x: hidden;
+
+		text-align: left;
+		padding-left: 0;
+		max-width: none;
+		margin-left: 0 !important;
+		margin-right: 0;
+	}
+
+	.toggle-sidebar {
+		float: left;
+		margin-left: -80px;
+		display: inline-block;
+		position: relative;
+		color: @navbar-inverse-color;
+		padding: @font-size-base;
+		font-size: @font-size-base;
+		text-decoration: none;
+
+	}
+
+	.navbar-nav {
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-left: 0;
+		margin-right: 0 !important;
+
+		> li > a {
+			.border-radius(0);
+		}
+	}
+
+	// Dividers in navbar
+	// -------------------------
+	.divider-vertical {
+		height: @navbar-height;
+		border-left: 1px solid @navbar-default-bg;
+		border-right: 1px solid black;
+	}
+}
