@@ -19,7 +19,8 @@
   "devDependencies": {
     "build-skin": "^1.0.5",
     "jspm": "^0.17.0-beta.35",
-    "live-server": "^1.2.0"
+    "live-server": "^1.2.0",
+    "bootstrap": "^3.3.7"
   },
   "jspm": {
     "name": "react-jspm",

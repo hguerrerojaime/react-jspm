@@ -4,7 +4,6 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className="header navbar navbar-inverse navbar-fixed-top" role="banner">
-         <div className="container">
              <ul className="nav navbar-nav">
                  <li className="nav-toggle">
                      <a href="javascript:void(0);" title="">
@@ -14,9 +13,6 @@ export default class Header extends React.Component {
              </ul>
              <a className="navbar-brand" href="index.html">
                  <strong>BIITS</strong>CRM
-             </a>
-             <a href="#" className="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Toggle navigation">
-                 <i className="fa fa-reorder"></i>
              </a>
              <ul className="nav navbar-nav navbar-left hidden-xs hidden-sm">
                  <li>
@@ -40,7 +36,6 @@ export default class Header extends React.Component {
              <ul className="nav navbar-nav navbar-right">
 
              </ul>
-         </div>
         </header>
     );
   }
