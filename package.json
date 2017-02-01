@@ -4,7 +4,8 @@
   "description": "React with JSPM",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/live-server webapp"
+    "start": "node_modules/.bin/live-server webapp",
+    "build": "node_modules/.bin/jspm bundle src/react-jspm webapp/build.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   },
   "homepage": "https://github.com/hguerrerojaime/react-jspm#readme",
   "devDependencies": {
-    "build-skin": "^1.0.5",
+    "build-skin": "^1.0.6",
     "jspm": "^0.17.0-beta.35",
     "live-server": "^1.2.0",
     "bootstrap": "^3.3.7"
