@@ -1,24 +1,44 @@
 import React from 'react';
 
-import Button from 'react-jspm/commons/Button';
+
 import Panel from 'react-jspm/commons/Panel';
-import InputGroup from 'react-jspm/commons/InputGroup';
-import InputGroupAddon from 'react-jspm/commons/InputGroupAddon';
-import InputText from 'react-jspm/commons/InputText';
+import InputLookup from 'react-jspm/forms/InputLookup';
+import DivCol from 'react-jspm/commons/DivCol';
+import Form from 'react-jspm/forms/Form';
+import FormGroup from 'react-jspm/forms/FormGroup';
+
 
 export default class AppBody extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+       value: {
+          sample: String.random()
+       }
+    };
+
+    this.submit = this.submit.bind(this);
+
+  }
+
   render() {
+
     return (
       <div>
         <Panel title="Dashboard" brand="primary">
-          <InputGroup>
-             <InputText />
-             <InputGroupAddon type="btn">
-                <Button icon="fa fa-search" />
-             </InputGroupAddon>
-          </InputGroup>
+          <Form submit={this.submit}>
+            <FormGroup label="Supervisor">
+              <InputLookup stateHolder={this} model="value.sample" />
+            </FormGroup>
+          </Form>
         </Panel>
       </div>
     );
   }
+
+  submit(evt) {
+     console.log(this.state);
+  }
+
 }

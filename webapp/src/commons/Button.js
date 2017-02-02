@@ -8,7 +8,11 @@ export default class Button extends React.Component {
     let icon = this.props.icon ? <Icon name={this.props.icon} /> : null;
 
     return (
-      <button type="button" className={"btn btn-"+this.props.brand+" btn-"+this.props.size}>
+      <button
+          type="button"
+          className={"btn btn-"+this.props.brand+" btn-"+this.props.size}
+          onClick={this.props.click}
+      >
          { icon } { this.props.label }
       </button>
     );
@@ -19,5 +23,6 @@ export default class Button extends React.Component {
 Button.defaultProps = {
   size: "md",
   label: null,
-  brand: "default"
+  brand: "default",
+  click: (evt) => {}
 };

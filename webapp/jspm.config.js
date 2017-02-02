@@ -8,6 +8,7 @@ SystemJS.config({
         "*.js": {
           "loader": "plugin-babel",
           "babelOptions": {
+            "es2015": true,
             "plugins": [
               "babel-plugin-transform-react-jsx"
             ]
@@ -43,6 +44,7 @@ SystemJS.config({
     "path": "npm:jspm-nodelibs-path@0.2.1",
     "process": "npm:jspm-nodelibs-process@0.2.0",
     "react": "npm:react@15.4.2",
+    "react-binding": "npm:react-binding@0.9.1",
     "react-dom": "npm:react-dom@15.4.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
