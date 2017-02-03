@@ -11,10 +11,11 @@ export default class InputText extends Bindable {
 
     return (
       <input type="text"
-          className={"form-control input-"+this.props.size}
+          className={"form-control input-"+this.props.size+" "+this.props.className}
           onChange={ this.handleChange }
           value={ this.binder.value }
-          onBlur={ this.props.blur }
+          onBlur={ this.props.onBlur }
+          placeholder={ this.props.placeholder }
       />
     );
   }
@@ -40,9 +41,14 @@ export default class InputText extends Bindable {
 
 }
 
-InputText.defaultProps = {
+InputText.defaultProps = Object.merge(Bindable.defaultProps,{
    size: "md",
    case: null,
-   change: Bindable.defaultProps.change,
-   blur: (evt) => {}
-};
+   placeholder:null,
+   onBlur: (evt) => {}
+});
+
+InputText.propTypes = Object.merge(Bindable.propTypes, {
+   size: React.PropTypes.string.isRequired,
+   onBlur: React.PropTypes.func.isRequired
+});

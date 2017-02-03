@@ -6,7 +6,7 @@ import InputLookup from 'react-jspm/forms/InputLookup';
 import DivCol from 'react-jspm/commons/DivCol';
 import Form from 'react-jspm/forms/Form';
 import FormGroup from 'react-jspm/forms/FormGroup';
-
+import ExampleService from 'react-jspm/services/ExampleService';
 
 export default class AppBody extends React.Component {
 
@@ -29,7 +29,11 @@ export default class AppBody extends React.Component {
         <Panel title="Dashboard" brand="primary">
           <Form submit={this.submit}>
             <FormGroup label="Supervisor">
-              <InputLookup stateHolder={this} model="value.sample" />
+              <InputLookup
+                  stateHolder={this}
+                  model="value.sample"
+                  lookupService="exampleService"
+              />
             </FormGroup>
           </Form>
         </Panel>

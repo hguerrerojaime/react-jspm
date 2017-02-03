@@ -19,7 +19,7 @@ export default class Modal extends React.Component {
               <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 className="modal-title">{ this.props.title }</h4>
             </div>
-            <div className="modal-body">
+            <div className="modal-body clearfix">
                 { this.props.children }
             </div>
           </div>
@@ -31,6 +31,10 @@ export default class Modal extends React.Component {
 
   show() {
       $(this.element).modal();
+  }
+
+  close() {
+      $(this.element).modal('hide');
   }
 
 }

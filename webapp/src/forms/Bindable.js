@@ -9,15 +9,11 @@ export default class Bindable extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
 
-    if (typeof this.props.stateHolder === "undefined") {
-      return;
-    }
-
     this.binder = this.createBinder();
   }
 
   handleChange(evt) {
-    this.props.change(evt,evt.target.value);
+    this.props.onChange(evt,evt.target.value);
     this.binder.requestChange(evt.target.value);
   }
 
@@ -50,5 +46,11 @@ export default class Bindable extends React.Component {
 }
 
 Bindable.defaultProps = {
-  change: (evt,value) => {}
-}
+  onChange: (evt,value) => {}
+};
+
+Bindable.propTypes = {
+  stateHolder: React.PropTypes.instanceOf(React.Component).isRequired,
+  model: React.PropTypes.string.isRequired,
+  name: React.PropTypes.string
+};
