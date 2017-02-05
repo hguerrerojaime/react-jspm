@@ -13,8 +13,10 @@ export default class AppBody extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-       value: {
-          sample: String.random()
+       record: {
+          id: "1234",
+          key: "U57605",
+          value: "PANCHO PISTOLAS"
        }
     };
 
@@ -31,7 +33,7 @@ export default class AppBody extends React.Component {
             <FormGroup label="Supervisor">
               <InputLookup
                   stateHolder={this}
-                  model="value.sample"
+                  model="record"
                   lookupService="exampleService"
               />
             </FormGroup>

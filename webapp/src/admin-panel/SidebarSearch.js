@@ -11,7 +11,7 @@ export default class SidebarSearch extends React.Component {
     super(props);
 
     this.state = {
-      q:null
+      q:"hOLA"
     };
   }
 

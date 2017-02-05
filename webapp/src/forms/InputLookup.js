@@ -12,64 +12,103 @@ import DivCol from 'react-jspm/commons/DivCol';
 import Injector from 'react-jspm/ioc/Injector';
 import update from 'react-addons-update';
 
+
 export default class InputLookup extends Bindable {
 
   constructor(props) {
     super(props);
-    this.openModal = this.openModal.bind(this);
-    this.lookupList = this.lookupList.bind(this);
-    this.state = {
-      search: null,
-      resultList: [],
-      key:null,
-      loading: false
-    }
 
+
+    this.state = {
+      selectItem: {
+        id: this.binder.value.id,
+        key: this.binder.value.key,
+        value: this.binder.value.value,
+      }
+    };
+
+    this.showLookupModal = this.showLookupModal.bind(this);
     this.service = Injector.get(this.props.lookupService);
 
   }
 
   render() {
     return (
-      <InputGroup>
-         <InputText
-            stateHolder={this}
-            model="key"
-            blur={ (evt) => console.log(evt) }
-         />
-         <InputGroupAddon type="btn">
-            <Button icon="fa fa-search" brand="info" click={this.openModal} />
-         </InputGroupAddon>
-         <Modal ref={(modal) => this.modal = modal}>
-          <p className="clearfix">
-            <InputText
-                stateHolder={this}
-                model="search"
-                placeholder="Search..."
+      <div>
+        <InputGroup>
+           <InputText
+              stateHolder={this}
+              model="selectItem.key"
+           />
+           <InputGroupAddon type="btn">
+              <Button icon="fa fa-search" brand="info" onClick={this.showLookupModal} />
+           </InputGroupAddon>
 
-            />
-          </p>
-          <hr/>
-          <div className="clearfix">
-              { this.getResultsBody() }
-          </div>
-         </Modal>
-      </InputGroup>
+        </InputGroup>
+        <LookupModal parent={this} ref={(lookupModal) => this.lookupModal = lookupModal}/>
+      </div>
     );
   }
 
+  showLookupModal() {
+    console.log(this.state);
+    this.lookupModal.show();
+  }
 
-  openModal(evt) {
-     this.modal.show();
-     this.lookupList();
+
+}
+
+InputLookup.defaultProps = Object.merge(Bindable.defaultProps,{});
+
+InputLookup.propTypes = Object.merge(Bindable.propTypes,{
+    lookupService: React.PropTypes.string.isRequired
+});
+
+class LookupModal extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+       loading:false,
+       resultList: []
+    };
 
   }
 
-  lookupList(evt,value) {
+  render() {
+    return (
+      <Modal ref={(modal) => this.modal = modal}>
+         <p className="clearfix">
+           <InputText
+               stateHolder={this}
+               model="search"
+               placeholder="Search..."
+           />
+         </p>
+         <hr/>
+         <div className="clearfix">
+             { this.getResultsBody() }
+         </div>
+        </Modal>
+
+    );
+  }
+
+  show() {
+     this.modal.show();
+     this.lookupList();
+  }
+
+  close() {
+    this.modal.close();
+  }
+
+  lookupList() {
 
       this.setState({ loading:true });
 
-      this.service.lookupList().then((resultList) => {
+      this.props.parent.service.lookupList().then((resultList) => {
          this.setState({
            resultList: resultList,
            loading: false
@@ -77,59 +116,58 @@ export default class InputLookup extends Bindable {
 
       });
 
-
-
   }
 
   getResultsBody() {
 
       if(this.state.loading) {
-         return <Well size="sm"> Loading... </Well>;
+         return this.renderWell("Loading...");
       } else if (!this.state.loading && this.state.resultList.length == 0) {
-         return <Well size="sm"> No Records Found </Well>;
+         return this.renderWell("No results found");
       } else {
-          let rows = [];
-
-          for (let item of this.state.resultList) {
-             rows.push((
-               <tr key={item.id} onClick={() => this.selectItem(item) }>
-                 <td>{item.key}</td>
-                 <td>{item.value}</td>
-               </tr>
-             ));
-          }
-
-          return (
-              <table className="table table-condensed table-striped lookup-table">
-              <thead>
-                <tr>
-                  <th style={{width:"20%"}}>Key</th>
-                  <th>Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                  { rows }
-              </tbody>
-            </table>
-          );
+         return this.renderResultTable();
       }
   }
 
-  selectItem(item) {
-
-      this.setState({ key: item.key });
-      this.modal.close();
-      console.log(item.key);
-      console.log(this.state);
-
+  renderWell(message) {
+    return <Well size="sm"> { message } </Well>;
   }
 
+  renderResultTable() {
+    let rows = [];
+
+    for (let item of this.state.resultList) {
+       rows.push(this.renderResultRow(item));
+    }
+
+    return (
+        <table className="table table-condensed table-striped lookup-table">
+        <thead>
+          <tr>
+            <th style={{width:"20%"}}>Key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+            { rows }
+        </tbody>
+      </table>
+    );
+  }
+
+  renderResultRow(item) {
+    return (
+      <tr key={item.id} onClick={(evt) => { this.selectItem(item); } }>
+        <td>{item.key}</td>
+        <td>{item.value}</td>
+      </tr>
+    );
+  }
+
+  selectItem(item) {
+      let parentComponent = this.props.parent;
+      this.modal.close();
+      parentComponent.binder.requestChange(item);
+      console.log(parentComponent.binder);
+  }
 }
-
-InputLookup.defaultProps = Object.merge(Bindable.defaultProps,{
-
-});
-
-InputLookup.propTypes = Object.merge(Bindable.propTypes,{
-    lookupService: React.PropTypes.string.isRequired
-});
