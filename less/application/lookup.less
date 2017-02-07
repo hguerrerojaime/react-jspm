@@ -7,3 +7,23 @@
   color: @dropdown-link-hover-color;
   background: @dropdown-link-hover-bg;
 }
+
+
+.lookup-table tbody {
+    display:block;
+    height:200px;
+    overflow:auto;
+}
+
+.lookup-table thead,.lookup-table tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+.lookup-table thead {
+    width: calc( 100% - 1em );
+}
+
+.lookup-table .key-col {
+  width: 25%;
+}

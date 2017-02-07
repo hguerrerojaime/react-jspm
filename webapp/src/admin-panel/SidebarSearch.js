@@ -11,7 +11,9 @@ export default class SidebarSearch extends React.Component {
     super(props);
 
     this.state = {
-      q:"hOLA"
+      data: {
+        q:undefined
+      }
     };
   }
 
@@ -19,7 +21,7 @@ export default class SidebarSearch extends React.Component {
     return (
       <li className="sidebar-search">
         <InputGroup>
-           <InputText stateHolder={this} model="q" />
+           <InputText stateHolder={this} model="data.q" />
            <InputGroupAddon type="btn">
               <Button icon="fa fa-search"/>
            </InputGroupAddon>

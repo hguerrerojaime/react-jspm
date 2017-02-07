@@ -12,7 +12,7 @@ export default class Modal extends React.Component {
 
   render() {
     return (
-      <div className="modal fade" tabIndex="-1" role="dialog" ref={(element) => this.element = element }>
+      <div className="modal" tabIndex="-1" role="dialog" ref={(element) => this.element = element }>
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">

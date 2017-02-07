@@ -9,12 +9,17 @@ export default class Bindable extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
 
-    this.binder = this.createBinder();
+    if (this.hasModel()) {
+      this.binder = this.createBinder();
+    }
+
   }
 
   handleChange(evt) {
     this.props.onChange(evt);
-    this.binder.requestChange(evt.target.value);
+    if (this.hasModel()) {
+      this.binder.value = evt.target.value;
+    }
   }
 
   createBinder() {
@@ -22,21 +27,19 @@ export default class Bindable extends React.Component {
     let binder = null;
     let stateHolder = this.props.stateHolder;
     let model = this.props.model;
-
-
     let paths = model.split(".",2);
     let basePath = paths[0];
-
 
     if (paths.length > 1) {
        let secondaryPath = paths[1];
        binder = Binder.bindToState(stateHolder,basePath,secondaryPath);
-    } else {
-       binder = Binder.bindToState(stateHolder,basePath);
     }
 
-
     return binder;
+  }
+
+  hasModel() {
+    return this.props.stateHolder && this.props.model;
   }
 
 }
@@ -46,7 +49,7 @@ Bindable.defaultProps = {
 };
 
 Bindable.propTypes = {
-  stateHolder: React.PropTypes.instanceOf(React.Component).isRequired,
-  model: React.PropTypes.string.isRequired,
+  stateHolder: React.PropTypes.instanceOf(React.Component),
+  model: React.PropTypes.string,
   name: React.PropTypes.string
 };

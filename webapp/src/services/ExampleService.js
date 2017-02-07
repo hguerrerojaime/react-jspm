@@ -10,7 +10,9 @@ export default class ExampleService extends LookupService {
      ;
   }
   lookupKey(key) {
-    throw new TypeError("This method is not implemented yet");
+    return request.get('http://demo4627594.mockable.io/supervisors/'+key).
+       then((response) => response.body)
+    ;
   }
 
 }

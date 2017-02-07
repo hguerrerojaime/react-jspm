@@ -19,13 +19,13 @@ export default class Form extends React.Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    this.props.submit(evt);
+    this.props.onSubmit(evt);
   }
 
 }
 
 Form.defaultProps = {
   orientation: "horizontal",
-  submit:(evt)  => {},
+  onSubmit:(evt)  => {},
   clasName:null
 };
