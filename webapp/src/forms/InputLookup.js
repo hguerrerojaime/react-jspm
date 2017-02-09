@@ -11,7 +11,6 @@ import DivRow from 'react-jspm/commons/DivRow';
 import DivCol from 'react-jspm/commons/DivCol';
 import Form from './Form';
 
-import Injector from 'react-jspm/ioc/Injector';
 import update from 'react-addons-update';
 import InlineLoader from 'react-jspm/commons/InlineLoader';
 
@@ -24,7 +23,7 @@ export default class InputLookup extends Bindable {
     this.showLookupModal = this.showLookupModal.bind(this);
     this.updateSelected = this.updateSelected.bind(this);
     this.lookupKey = this.lookupKey.bind(this);
-    this.service = Injector.get(this.props.lookupService);
+    this.service = this.props.di(this.props.lookupService);
 
   }
 
@@ -69,7 +68,7 @@ export default class InputLookup extends Bindable {
 
          }
        });
-       console.log(this.state.lookup.key);
+
        this.service.lookupKey(this.state.lookup.key).then((item) => {
           this.updateValue(item);
        });
@@ -144,8 +143,7 @@ class LookupModal extends React.Component {
          <div className="clearfix">
              { this.getResultsBody() }
          </div>
-        </Modal>
-
+      </Modal>
     );
   }
 
@@ -170,6 +168,7 @@ class LookupModal extends React.Component {
 
     let list = this.searchTmp.length > search.length ?
         this.state.fullResultList : this.state.resultList;
+
 
 
     if (search != "") {
@@ -216,6 +215,7 @@ class LookupModal extends React.Component {
   }
 
   renderResultTable() {
+
     let rows = this.state.resultList.map((item) => {
        return (
          <tr key={item.id} onClick={() => { this.selectItem(item); } }>

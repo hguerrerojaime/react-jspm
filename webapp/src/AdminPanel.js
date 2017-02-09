@@ -16,14 +16,13 @@ export default class AdminPanel extends React.Component {
                 <AppBody />
               </div>
             </div>
+            <div id="alert-wrapper"></div>
           </div>
         );
    }
 
    componentDidMount() {
-
       initBodySetup();
-
    }
 
 }

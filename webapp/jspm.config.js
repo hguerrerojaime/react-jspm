@@ -48,6 +48,7 @@ SystemJS.config({
     "react": "npm:react@15.4.2",
     "react-addons-update": "npm:react-addons-update@15.4.2",
     "react-binding": "npm:react-binding@0.9.1",
+    "react-di": "npm:react-di@0.3.1",
     "react-dom": "npm:react-dom@15.4.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",

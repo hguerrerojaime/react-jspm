@@ -10,7 +10,7 @@ export default class Sidebar extends React.Component {
           <div className="sidebar-nav navbar-collapse">
               <ul className="nav in" id="side-menu">
                  <SidebarSearch />
-                 <MenuItem className="menu-item" href="javascript:void(0);">
+                 <MenuItem icon="fam fam-user" className="menu-item" href="javascript:void(0);">
                     Dashboard
                  </MenuItem>
                  <MenuItem className="menu-item" href="javascript:void(0);">

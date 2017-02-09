@@ -125,18 +125,26 @@
     }
 }
 
+.sidebar .sidebar-nav ul.nav li.menu-item {
+    border-right: 3px solid darken(@navbar-default-bg,20%);
+}
+
+.sidebar .sidebar-nav ul.nav li.menu-item:hover {
+    border-right-color: @brand-primary;
+}
+
 
 .sidebar .sidebar-nav ul.nav li.menu-item a:hover {
     background-color: @navbar-default-link-hover-bg;
-    border-top: 1px solid @navbar-default-border;
-    border-bottom: 1px solid @navbar-default-border;
+    border-top: 1px solid darken(@navbar-default-border,20%);
+    border-bottom: 1px solid darken(@navbar-default-border,20%);
     color: @navbar-default-link-hover-color;
 }
 
 .sidebar .sidebar-nav ul.nav li a:focus {
     background-color: @navbar-default-link-active-bg;
-    border-top: 1px solid @navbar-default-border;
-    border-bottom: 1px solid @navbar-default-border;
+    border-top: 1px solid darken(@navbar-default-border,20%);
+    border-bottom: 1px solid darken(@navbar-default-border,20%);
 }
 
 .sidebar .sidebar-nav ul.nav li.menu-item a {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Bindable from './Bindable';
+import Constants from 'react-jspm/commons/Constants';
 
 export default class InputText extends Bindable {
 
@@ -65,7 +66,7 @@ InputText.defaultProps = Object.merge(Bindable.defaultProps,{
 });
 
 InputText.propTypes = Object.merge(Bindable.propTypes, {
-   size: React.PropTypes.string.isRequired,
+   size: React.PropTypes.oneOf(Constants.SIZES).isRequired,
    case: React.PropTypes.string,
    onBlur: React.PropTypes.func.isRequired,
    onKeyPress: React.PropTypes.func.isRequired

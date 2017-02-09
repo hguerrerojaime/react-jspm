@@ -1,6 +1,9 @@
-export default class LookupService {
+import Service from './Service';
+
+export default class LookupService extends Service {
 
   constructor() {
+     super();
      if (new.target === LookupService) {
        throw new TypeError("Cannot construct Abstract instances directly");
      }
