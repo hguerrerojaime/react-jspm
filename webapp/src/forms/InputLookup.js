@@ -189,7 +189,7 @@ class LookupModal extends React.Component {
 
       this.setState({ loading:true });
 
-      this.props.parent.service.lookupList().then((resultList) => {
+      this.props.parent.service.lookupList(this.props.parent.props.domainObject).then((resultList) => {
          this.setState({
            fullResultList: resultList,
            resultList: resultList,
@@ -244,4 +244,8 @@ class LookupModal extends React.Component {
       this.props.onItemSelected(item);
       this.close();
   }
+}
+
+InputLookup.defaultProps = {
+  lookupService: "lookupService"
 }

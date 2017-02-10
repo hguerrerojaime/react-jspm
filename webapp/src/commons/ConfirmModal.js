@@ -6,7 +6,7 @@ export default class ConfirmModal extends React.Component {
 
   render() {
     return (
-       <Modal ref={(modal) => { this.modal = modal; if (modal) modal.show(); }}
+       <Modal icon="fam fam-information" ref={(modal) => { this.modal = modal; if (modal) modal.show(); }}
           title={this.props.type}
           onClose={this.props.onClose}
         >

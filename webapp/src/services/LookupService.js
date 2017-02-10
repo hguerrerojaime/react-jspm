@@ -1,19 +1,23 @@
 import Service from './Service';
+import request from 'superagent';
 
 export default class LookupService extends Service {
 
-  constructor() {
-     super();
-     if (new.target === LookupService) {
-       throw new TypeError("Cannot construct Abstract instances directly");
-     }
+  constructor(props) {
+    super(Object.merge({
+      serviceUrl:"http://demo4627594.mockable.io"
+    },props));
   }
 
-  lookupList(search = null) {
-    throw new TypeError("This method is not implemented yet");
+  lookupList(domainObject,search = null,view = null) {
+     return request.get(this.props.serviceUrl+"/"+domainObject).
+        then((response) => response.body)
+     ;
   }
-  lookupKey(key) {
-    throw new TypeError("This method is not implemented yet");
+  lookupKey(domainObject,key,view = null) {
+    return request.get(this.props.serviceUrl+"/"+domainObject+"/"+key).
+       then((response) => response.body)
+    ;
   }
 
 }

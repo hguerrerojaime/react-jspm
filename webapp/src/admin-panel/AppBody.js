@@ -5,13 +5,14 @@ import InputLookup from 'react-jspm/forms/InputLookup';
 import DivCol from 'react-jspm/commons/DivCol';
 import Form from 'react-jspm/forms/Form';
 import FormGroup from 'react-jspm/forms/FormGroup';
-import ExampleService from 'react-jspm/services/ExampleService';
 import InputText from 'react-jspm/forms/InputText';
 import InputSelect from 'react-jspm/forms/InputSelect';
 import Well from 'react-jspm/commons/Well';
 import RecordActionBar from 'react-jspm/forms/RecordActionBar';
 import Button from 'react-jspm/commons/Button';
 import alert from 'react-jspm/core/alert';
+import Field from 'react-jspm/forms/Field';
+import FieldType from 'react-jspm/core/FieldType';
 
 export default class AppBody extends React.Component {
 
@@ -40,16 +41,17 @@ export default class AppBody extends React.Component {
         <Panel title="Dashboard" brand="primary">
           <Form onSubmit={this.submit}>
             <Well size="sm">
-              <RecordActionBar mode="show" />
+              <RecordActionBar mode="new" />
             </Well>
+            <fieldset>
             <legend>Form Data</legend>
 
               <FormGroup label="Supervisor">
-                <InputLookup
-                    stateHolder={this}
-                    model="data.supervisor"
-                    lookupService="exampleService"
-                />
+                 <Field type={FieldType.LOOKUP}
+                   stateHolder={this}
+                   model="data.supervisor"
+                   domainObject="supervisors"
+                 />
               </FormGroup>
               <FormGroup label="Sample Text">
                 <InputText
@@ -66,8 +68,9 @@ export default class AppBody extends React.Component {
               </FormGroup>
               <hr />
               <Well size="sm">
-                  <RecordActionBar mode="show" />
+                  <RecordActionBar mode="new" />
               </Well>
+              </fieldset>
           </Form>
         </Panel>
       </div>

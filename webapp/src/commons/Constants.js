@@ -4,4 +4,8 @@ export default class Constants {
     return ['xs','sm','md','lg','xl'];
   }
 
+  static get TEXT_CASES() {
+    return ['upper','lower'];
+  }
+
 }

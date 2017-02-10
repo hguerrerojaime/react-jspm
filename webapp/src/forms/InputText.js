@@ -67,7 +67,7 @@ InputText.defaultProps = Object.merge(Bindable.defaultProps,{
 
 InputText.propTypes = Object.merge(Bindable.propTypes, {
    size: React.PropTypes.oneOf(Constants.SIZES).isRequired,
-   case: React.PropTypes.string,
+   case: React.PropTypes.oneOf(Constants.TEXT_CASES),
    onBlur: React.PropTypes.func.isRequired,
    onKeyPress: React.PropTypes.func.isRequired
 });

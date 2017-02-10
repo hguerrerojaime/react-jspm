@@ -4,7 +4,7 @@
   "description": "React with JSPM",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/live-server webapp",
+    "start": "node_modules/.bin/concurrently --kill-others  \"node_modules/.bin/live-server webapp\" \"node mock-rest/server.js\"",
     "build": "node_modules/.bin/jspm bundle src/react-jspm webapp/build.js"
   },
   "repository": {
@@ -18,10 +18,11 @@
   },
   "homepage": "https://github.com/hguerrerojaime/react-jspm#readme",
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "build-skin": "^1.0.6",
+    "concurrently": "^3.2.0",
     "jspm": "^0.17.0-beta.35",
-    "live-server": "^1.2.0",
-    "bootstrap": "^3.3.7"
+    "live-server": "^1.2.0"
   },
   "jspm": {
     "name": "react-jspm",
@@ -33,6 +34,7 @@
       "bootstrap": "github:twbs/bootstrap@^3.3.7",
       "component-emitter": "npm:component-emitter@^1.2.1",
       "css": "github:systemjs/plugin-css@^0.1.32",
+      "enumify": "npm:enumify@^1.0.4",
       "font-awesome": "npm:font-awesome@^4.7.0",
       "jquery": "npm:jquery@^3.1.1",
       "react-addons-update": "npm:react-addons-update@^15.4.2",

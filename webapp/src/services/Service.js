@@ -1,5 +1,7 @@
 export default class Service {
 
-  constructor() {}
+  constructor(props) {
+    this.props = props;
+  }
 
 }

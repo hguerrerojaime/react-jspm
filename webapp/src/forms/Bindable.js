@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactBinding from 'react-binding';
-
-let Binder = ReactBinding.default;
+import Binder from 'react-binding';
 
 export default class Bindable extends React.Component {
 

@@ -3,6 +3,8 @@ import React from 'react';
 export default class Panel extends React.Component {
 
   render() {
+
+
     return (
        <div className={ "panel shadow panel-border top panel-"+this.props.brand }>
           <div className="panel-heading">

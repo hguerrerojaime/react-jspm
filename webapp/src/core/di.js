@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDI from 'react-di';
-import ExampleService from 'react-jspm/services/ExampleService';
+import LookupService from 'react-jspm/services/LookupService';
 
 let dependencies = {
-  exampleService: new ExampleService()
+  lookupService: new LookupService()
 }
 
 let resolver = new ReactDI(dependencies);
