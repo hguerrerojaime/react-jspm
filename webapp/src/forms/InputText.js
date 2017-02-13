@@ -62,7 +62,9 @@ InputText.defaultProps = Object.merge(Bindable.defaultProps,{
    case: null,
    placeholder:null,
    onBlur: (evt) => {},
-   onKeyPress: (evt) => {}
+   onKeyPress: (evt) => {},
+   onKeyUp: (evt) => {},
+   onKeyDown: (evt) => {}
 });
 
 InputText.propTypes = Object.merge(Bindable.propTypes, {

@@ -53,7 +53,7 @@ SystemJS.config({
     "react-dom": "npm:react-dom@15.4.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
-    "superagent": "npm:superagent@3.4.1",
+    "superagent": "npm:superagent@3.4.2",
     "url": "npm:jspm-nodelibs-url@0.2.0",
     "util": "npm:jspm-nodelibs-util@0.2.1",
     "vm": "npm:jspm-nodelibs-vm@0.2.0",
@@ -71,18 +71,7 @@ SystemJS.config({
       "map": {
         "object-assign": "npm:object-assign@4.1.1",
         "loose-envify": "npm:loose-envify@1.3.1",
-        "fbjs": "npm:fbjs@0.8.8"
-      }
-    },
-    "npm:fbjs@0.8.8": {
-      "map": {
-        "loose-envify": "npm:loose-envify@1.3.1",
-        "object-assign": "npm:object-assign@4.1.1",
-        "core-js": "npm:core-js@1.2.7",
-        "isomorphic-fetch": "npm:isomorphic-fetch@2.2.1",
-        "setimmediate": "npm:setimmediate@1.0.5",
-        "promise": "npm:promise@7.1.1",
-        "ua-parser-js": "npm:ua-parser-js@0.7.12"
+        "fbjs": "npm:fbjs@0.8.9"
       }
     },
     "npm:loose-envify@1.3.1": {
@@ -193,7 +182,7 @@ SystemJS.config({
     "npm:create-ecdh@4.0.0": {
       "map": {
         "bn.js": "npm:bn.js@4.11.6",
-        "elliptic": "npm:elliptic@6.3.2"
+        "elliptic": "npm:elliptic@6.3.3"
       }
     },
     "npm:diffie-hellman@5.0.2": {
@@ -213,7 +202,7 @@ SystemJS.config({
         "bn.js": "npm:bn.js@4.11.6",
         "create-hash": "npm:create-hash@1.1.2",
         "create-hmac": "npm:create-hmac@1.1.4",
-        "elliptic": "npm:elliptic@6.3.2",
+        "elliptic": "npm:elliptic@6.3.3",
         "inherits": "npm:inherits@2.0.3",
         "browserify-rsa": "npm:browserify-rsa@4.0.1",
         "parse-asn1": "npm:parse-asn1@5.0.0"
@@ -272,14 +261,6 @@ SystemJS.config({
         "create-hash": "npm:create-hash@1.1.2"
       }
     },
-    "npm:elliptic@6.3.2": {
-      "map": {
-        "bn.js": "npm:bn.js@4.11.6",
-        "inherits": "npm:inherits@2.0.3",
-        "brorand": "npm:brorand@1.0.6",
-        "hash.js": "npm:hash.js@1.0.3"
-      }
-    },
     "npm:cipher-base@1.0.3": {
       "map": {
         "inherits": "npm:inherits@2.0.3"
@@ -302,7 +283,7 @@ SystemJS.config({
     "npm:miller-rabin@4.0.0": {
       "map": {
         "bn.js": "npm:bn.js@4.11.6",
-        "brorand": "npm:brorand@1.0.6"
+        "brorand": "npm:brorand@1.0.7"
       }
     },
     "npm:url@0.11.0": {
@@ -380,30 +361,11 @@ SystemJS.config({
         "ua-parser-js": "npm:ua-parser-js@0.7.12"
       }
     },
-    "npm:superagent@3.4.1": {
-      "map": {
-        "form-data": "npm:form-data@2.1.2",
-        "extend": "npm:extend@3.0.0",
-        "methods": "npm:methods@1.1.2",
-        "cookiejar": "npm:cookiejar@2.1.0",
-        "component-emitter": "npm:component-emitter@1.2.1",
-        "readable-stream": "npm:readable-stream@2.2.2",
-        "mime": "npm:mime@1.3.4",
-        "formidable": "npm:formidable@1.1.1",
-        "debug": "npm:debug@2.6.0",
-        "qs": "npm:qs@6.3.0"
-      }
-    },
     "npm:form-data@2.1.2": {
       "map": {
         "combined-stream": "npm:combined-stream@1.0.5",
         "asynckit": "npm:asynckit@0.4.0",
         "mime-types": "npm:mime-types@2.1.14"
-      }
-    },
-    "npm:debug@2.6.0": {
-      "map": {
-        "ms": "npm:ms@0.7.2"
       }
     },
     "npm:combined-stream@1.0.5": {
@@ -414,6 +376,33 @@ SystemJS.config({
     "npm:mime-types@2.1.14": {
       "map": {
         "mime-db": "npm:mime-db@1.26.0"
+      }
+    },
+    "npm:superagent@3.4.2": {
+      "map": {
+        "component-emitter": "npm:component-emitter@1.2.1",
+        "extend": "npm:extend@3.0.0",
+        "debug": "npm:debug@2.6.1",
+        "cookiejar": "npm:cookiejar@2.1.0",
+        "form-data": "npm:form-data@2.1.2",
+        "formidable": "npm:formidable@1.1.1",
+        "methods": "npm:methods@1.1.2",
+        "mime": "npm:mime@1.3.4",
+        "qs": "npm:qs@6.3.0",
+        "readable-stream": "npm:readable-stream@2.2.2"
+      }
+    },
+    "npm:debug@2.6.1": {
+      "map": {
+        "ms": "npm:ms@0.7.2"
+      }
+    },
+    "npm:elliptic@6.3.3": {
+      "map": {
+        "bn.js": "npm:bn.js@4.11.6",
+        "inherits": "npm:inherits@2.0.3",
+        "brorand": "npm:brorand@1.0.7",
+        "hash.js": "npm:hash.js@1.0.3"
       }
     }
   }

@@ -50,17 +50,18 @@ export default class AppBody extends React.Component {
                  <Field type={FieldType.LOOKUP}
                    stateHolder={this}
                    model="data.supervisor"
-                   domainObject="supervisors"
+                   domainObject="employee"
                  />
               </FormGroup>
               <FormGroup label="Sample Text">
-                <InputText
-                    stateHolder={this}
-                    model="data.textKey"
+                <Field type={FieldType.TEXT}
+                  stateHolder={this}
+                  model="data.textKey"
+                  case="upper"
                 />
               </FormGroup>
               <FormGroup label="Sample Select">
-                <InputSelect
+                <Field type={FieldType.SELECT}
                   stateHolder={this}
                   model="data.selectVal"
                   options={['RED','BLUE','GREEN']}

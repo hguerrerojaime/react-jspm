@@ -108,6 +108,7 @@ class LookupModal extends React.Component {
 
     this.state = {
        loading:false,
+       timer: undefined,
        fullResultList: [],
        resultList: [],
        form: {
@@ -129,6 +130,7 @@ class LookupModal extends React.Component {
                  model="form.search"
                  onChange={this.filterSearch}
                  onKeyPress={(evt) => {
+
                     if (evt.key == "Enter") {
                        evt.preventDefault();
                        if (this.state.resultList.length > 0) {
@@ -160,23 +162,40 @@ class LookupModal extends React.Component {
 
   filterSearch(evt) {
 
+    clearTimeout(this.state.timer);
+
     let search = evt.target.value;
 
     if (!this.searchTmp) {
       this.searchTmp = search;
     }
 
-    let list = this.searchTmp.length > search.length ?
-        this.state.fullResultList : this.state.resultList;
+    let listIsNarrowedDown = this.searchTmp.length <= search.length
 
-
+    let list = listIsNarrowedDown ? this.state.resultList : this.state.fullResultList;
 
     if (search != "") {
       list = list.filter((item) => {
           return item.key.toUpperCase().indexOf(search.toUpperCase()) >=0 ||
              item.value.toUpperCase().indexOf(search.toUpperCase()) >=0;
       });
+
+      if (list.length < 1) {
+        this.setState({ loading:true });
+        this.state.timer = setTimeout(()=> {
+            this.lookupList();
+        },1000);
+      }
+
+    } else {
+      this.setState({ loading:true });
+      this.state.timer = setTimeout(()=> {
+          this.lookupList();
+      },1000);
+
     }
+
+
 
     this.setState({
       resultList: list
@@ -186,10 +205,9 @@ class LookupModal extends React.Component {
   }
 
   lookupList() {
-
       this.setState({ loading:true });
 
-      this.props.parent.service.lookupList(this.props.parent.props.domainObject).then((resultList) => {
+      this.props.parent.service.lookupList(this.props.parent.props.domainObject,this.state.form.search).then((resultList) => {
          this.setState({
            fullResultList: resultList,
            resultList: resultList,

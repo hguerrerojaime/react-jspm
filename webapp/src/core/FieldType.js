@@ -3,6 +3,7 @@ import Constants from 'react-jspm/commons/Constants';
 import { Enum } from 'enumify';
 import InputText from 'react-jspm/forms/InputText';
 import InputLookup from 'react-jspm/forms/InputLookup';
+import InputSelect from 'react-jspm/forms/InputSelect';
 
 export default class FieldType extends Enum {}
 
@@ -36,7 +37,10 @@ FieldType.initEnum({
   DATE: enumBody(),
   DATETIME: enumBody(),
   TIMESTAMP: enumBody(),
+  SELECT: enumBody({},(props) => {
+     return <InputSelect {...props} />;
+  }),
   LOOKUP: enumBody({},(props) => {
-     return <InputLookup {...props} />
+     return <InputLookup {...props} />;
   })
 });

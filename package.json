@@ -4,7 +4,7 @@
   "description": "React with JSPM",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/concurrently --kill-others  \"node_modules/.bin/live-server webapp\" \"node mock-rest/server.js\"",
+    "start": "node_modules/.bin/concurrently --kill-others  \"node_modules/.bin/live-server webapp\" \"node_modules/.bin/json-server --watch mock-rest/db.json\"",
     "build": "node_modules/.bin/jspm bundle src/react-jspm webapp/build.js"
   },
   "repository": {
@@ -21,6 +21,7 @@
     "bootstrap": "^3.3.7",
     "build-skin": "^1.0.6",
     "concurrently": "^3.2.0",
+    "json-server": "^0.9.5",
     "jspm": "^0.17.0-beta.35",
     "live-server": "^1.2.0"
   },
@@ -102,7 +103,7 @@
           "_stream_transform": "readable-stream/transform"
         }
       },
-      "npm:debug@2.6.0": {
+      "npm:debug@2.6.1": {
         "main": "src/browser.js",
         "jspmNodeConversion": false,
         "format": "cjs",

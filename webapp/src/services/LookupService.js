@@ -1,16 +1,23 @@
 import Service from './Service';
 import request from 'superagent';
+import $ from 'jquery';
 
 export default class LookupService extends Service {
 
   constructor(props) {
     super(Object.merge({
-      serviceUrl:"http://demo4627594.mockable.io"
+      serviceUrl:"http://localhost:3000"
     },props));
   }
 
   lookupList(domainObject,search = null,view = null) {
-     return request.get(this.props.serviceUrl+"/"+domainObject).
+
+     let params = {
+       q: search,
+       _limit: 20
+     };
+
+     return request.get(this.props.serviceUrl+"/"+domainObject+"?"+$.param(params)).
         then((response) => response.body)
      ;
   }
