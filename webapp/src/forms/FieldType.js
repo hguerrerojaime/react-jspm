@@ -1,9 +1,10 @@
 import React from 'react';
 import Constants from 'react-jspm/commons/Constants';
 import { Enum } from 'enumify';
-import InputText from 'react-jspm/forms/InputText';
-import InputLookup from 'react-jspm/forms/InputLookup';
-import InputSelect from 'react-jspm/forms/InputSelect';
+import InputText from './InputText';
+import InputLookup from './InputLookup';
+import InputSelect from './InputSelect';
+import InputDetail from './InputDetail';
 
 export default class FieldType extends Enum {}
 
@@ -42,5 +43,8 @@ FieldType.initEnum({
   }),
   LOOKUP: enumBody({},(props) => {
      return <InputLookup {...props} />;
+  }),
+  DETAIL: enumBody({},(props) => {
+    return <InputDetail {...props} />
   })
 });

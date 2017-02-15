@@ -58,7 +58,10 @@ export default class Modal extends React.Component {
   }
 
   componentDidMount() {
-    $(this.element).on('hidden.bs.modal', (evt) => {
+
+    this.buildJQueryPlugin($(this.element));
+
+    $(this.element).on('hide.bs.modal', (evt) => {
         this.props.onClose(evt);
     });
 
@@ -67,10 +70,41 @@ export default class Modal extends React.Component {
     });
   }
 
+  buildJQueryPlugin(jqElement) {
+
+    jqElement.on('hide.bs.modal', function(){
+        let $this = $(this);
+        let stackCount = $('.modal.in').length-1;
+        $('.modal.modal-stack-'+stackCount+' .modal-dialog.aside').removeClass('aside');
+    });
+
+    $(document).on('show.bs.modal', '.modal', function (event) {
+        var zIndex = 1040 + (10 * jQuery('.modal:visible').length);
+
+        let $this = $(this);
+
+        $this.css('z-index', zIndex);
+
+        setTimeout(function() {
+            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+            $('.modal.in .modal-dialog').addClass('aside');
+
+            let stackCount = $('.modal.in').length;
+
+            $this.find('.modal-dialog').removeClass('aside');
+            $this.addClass('modal-stack-'+stackCount);
+
+
+        }, 0);
+    });
+
+
+  }
+
 
   show() {
 
-      $(this.element).modal();
+      $(this.element).modal('show');
   }
 
   close() {

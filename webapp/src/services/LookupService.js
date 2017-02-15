@@ -14,7 +14,7 @@ export default class LookupService extends Service {
 
      let params = {
        q: search,
-       _limit: 20
+       _limit: 100
      };
 
      return request.get(this.props.serviceUrl+"/"+domainObject+"?"+$.param(params)).

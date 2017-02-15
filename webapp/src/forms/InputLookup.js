@@ -187,7 +187,7 @@ class LookupModal extends React.Component {
         },1000);
       }
 
-    } else {
+    } else if (list.length < this.state.fullResultList.length) {
       this.setState({ loading:true });
       this.state.timer = setTimeout(()=> {
           this.lookupList();

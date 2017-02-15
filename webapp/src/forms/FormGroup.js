@@ -4,12 +4,17 @@ import DivCol from 'react-jspm/commons/DivCol';
 export default class FormGroup extends React.Component {
 
   render() {
+
+    let label = this.props.label ? (
+      <label className={"control-label col-"+this.props.size+"-"+(12 - this.props.width)}>
+        {this.props.label}
+      </label>
+    ) : null;
+
     return (
       <div className="form-group">
-          <label className={"control-label col-"+this.props.size+"-"+this.props.labelWidth}>
-            {this.props.label}
-          </label>
-          <DivCol size={this.props.size} width={12 - this.props.labelWidth}>
+          { label }
+          <DivCol size={this.props.size} width={this.props.width}>
             {this.props.children}
           </DivCol>
       </div>
@@ -21,5 +26,5 @@ export default class FormGroup extends React.Component {
 
 FormGroup.defaultProps = {
   size: "md",
-  labelWidth: 2
+  width: 10
 };
