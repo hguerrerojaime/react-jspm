@@ -29,12 +29,12 @@
 
 .modal.in{
   .perspective(2000px);
-  
+
   .modal-dialog{
     &.aside{
       .transform(@modal-translate-z);
       .preserve-3d();
-      
+
       &.aside-1{
         .transform(calc(@modal-translate-z + @distance));
       }
@@ -46,7 +46,7 @@
       }
       &.aside-4{
         .transform(calc(@modal-translate-z + (@distance * 4)));
-      }   
+      }
       &.aside-5{
         .transform(calc(@modal-translate-z + (@distance * 5)));
       }

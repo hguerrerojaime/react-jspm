@@ -30,6 +30,15 @@ export default class Bindable extends React.Component {
 
     if (paths.length > 1) {
        let secondaryPath = paths[1];
+
+       if (!this.props.stateHolder.state[basePath]) {
+          this.props.stateHolder.state[basePath] = {
+            [secondaryPath]:this.getInitialValue()
+          };
+       } else if (!this.props.stateHolder.state[basePath][secondaryPath]) {
+          this.props.stateHolder.state[basePath][secondaryPath] = this.getInitialValue();
+       }
+
        binder = Binder.bindToState(stateHolder,basePath,secondaryPath);
     }
 
@@ -38,6 +47,10 @@ export default class Bindable extends React.Component {
 
   hasModel() {
     return this.props.stateHolder && this.props.model;
+  }
+
+  getInitialValue() {
+    return undefined;
   }
 
 }

@@ -1,4 +1,405 @@
 {
+  "drug": [{
+      "id": "e750d86f-5ac0-4019-b8b7-35efa67f493e",
+      "key": "0178-0610",
+      "value": "POTASSIUM CITRATE"
+    }, {
+      "id": "dcc88479-731b-47e8-a8a1-0537db3c0d64",
+      "key": "50436-0102",
+      "value": "DOCUSATE SODIUM"
+    }, {
+      "id": "8c8b1292-d3ce-4c7b-b2d4-9e4c2917bbc2",
+      "key": "0924-5603",
+      "value": "BACITRACIN ZINC, NEOMYCIN SULFATE, POLYMYXIN B SULFATE"
+    }, {
+      "id": "a2c0bd34-f0e6-4de6-b47e-349c2839be94",
+      "key": "36987-2361",
+      "value": "QUACK GRASS"
+    }, {
+      "id": "08deb346-4800-4950-8748-d0428b1d6c47",
+      "key": "10812-458",
+      "value": "TITANIUM DIOXIDE"
+    }, {
+      "id": "96d2c6b9-5eb3-43f7-baeb-2c464d169d52",
+      "key": "64117-164",
+      "value": "MERCURIC CATION"
+    }, {
+      "id": "e33828b5-33bd-410f-a77d-f973afafe01d",
+      "key": "54340-652",
+      "value": "TRICLOSAN"
+    }, {
+      "id": "affee4be-10f1-4194-87c1-cc144e645658",
+      "key": "0187-0772",
+      "value": "DILTIAZEM HYDROCHLORIDE"
+    }, {
+      "id": "d88763a7-0443-4795-bcc5-ecc91f961d4b",
+      "key": "55319-504",
+      "value": "ALCOHOL"
+    }, {
+      "id": "2abffd96-d221-4170-9645-6b8caf667a43",
+      "key": "13537-516",
+      "value": "OCTINOXATE AND OXYBENZONE"
+    }, {
+      "id": "e8ac3f58-3f97-434b-99f3-17fef1997ae0",
+      "key": "14783-327",
+      "value": "OCTINOXATE AND OXYBENZONE"
+    }, {
+      "id": "436b65f3-7138-4dca-985e-40eb459266e6",
+      "key": "54868-1344",
+      "value": "IMIPRAMINE HYDROCHLORIDE"
+    }, {
+      "id": "b6653037-f0c7-4e68-97da-fa08c63a65c9",
+      "key": "10096-0189",
+      "value": "TITANIUM DIOXIDE"
+    }, {
+      "id": "31ece430-920c-455f-8528-205da02b414a",
+      "key": "24385-924",
+      "value": "CHLORPHENIRAMINE MALEATE, PHENYLEPHRINE HCL"
+    }, {
+      "id": "0be8f006-d805-45f1-afd5-0599c6b43748",
+      "key": "58232-6002",
+      "value": "PETROLATUM"
+    }, {
+      "id": "37d1cdb7-52b3-4857-a1a0-29ff20d00106",
+      "key": "63824-351",
+      "value": "SALICYLIC ACID"
+    }, {
+      "id": "3b9b6290-4f1d-481a-b425-6d4e4f67e65b",
+      "key": "52584-241",
+      "value": "EPINEPHRINE"
+    }, {
+      "id": "89084785-181d-4f67-b5ed-5f34d80cd38a",
+      "key": "49348-177",
+      "value": "BISMUTH SUBSALICYLATE"
+    }, {
+      "id": "93b42453-f8b8-4da8-aacf-455046a004de",
+      "key": "0781-1077",
+      "value": "ALPRAZOLAM"
+    }, {
+      "id": "0962e7b7-eaf4-40fa-ae64-10c4a1005a7c",
+      "key": "64117-245",
+      "value": "POTASSIUM CHLORATE"
+    }, {
+      "id": "650809f3-81c5-4816-ab21-7f48e41ee531",
+      "key": "15127-979",
+      "value": "LORATADINE"
+    }, {
+      "id": "95cae1e2-f74e-4679-a488-ea3cbaea837b",
+      "key": "41163-400",
+      "value": "MINERAL OIL, PETROLATUM, PHENYLEPHRINE HCL, SHARK LIVER OIL"
+    }, {
+      "id": "86b0a2aa-a985-4f47-8d9a-e9a0f08a73d5",
+      "key": "52686-326",
+      "value": "OCTINOXATE AND TITANIUM DIOXIDE"
+    }, {
+      "id": "423a14f9-90c1-4f69-8de3-60d6d0dcf460",
+      "key": "41520-176",
+      "value": "PHENOL"
+    }, {
+      "id": "86ae3db0-786a-48bb-bea0-085ecf221441",
+      "key": "59535-2801",
+      "value": "GLYCERIN"
+    }, {
+      "id": "ee3c7f93-2f00-4c02-836f-843ae107d62f",
+      "key": "68516-5216",
+      "value": "ALBUMIN (HUMAN)"
+    }, {
+      "id": "50d12923-7c4b-47ab-840e-05339a2babef",
+      "key": "35356-301",
+      "value": "NIACIN"
+    }, {
+      "id": "bc593205-0dff-4abc-94ed-e0a855eccee7",
+      "key": "14783-470",
+      "value": "OCTINOXATE AND OXYBENZONE"
+    }, {
+      "id": "ee99fa39-c768-468b-89e2-0d50b598a598",
+      "key": "68151-5204",
+      "value": "CALCIUM ACETATE"
+    }, {
+      "id": "027893e7-0bfb-443d-baa3-433bb3036ee7",
+      "key": "63776-100",
+      "value": "ANTI-INTERLEUKIN-1.ALPHA. IMMUNOGLOBULIN G RABBIT, ASCORBIC ACID, METENKEFALIN, ERSOFERMIN, BOS TAURUS CARTILAGE, SUS SCROFA CARTILAGE, PORK COLLAGEN, BOS TAURUS RED BLOOD CELL, SUS SCROFA RED BLOOD CELL, INTERLEUKIN-3, INTERLEUKIN-3, BEEF LIVER, PORK LIVER, BEEF, PORK, BOS TAURUS TENDON, SUS SCROFA TENDON, CETERMIN"
+    }, {
+      "id": "2a07e900-4981-4df1-97f4-5ba86f6b0798",
+      "key": "36987-1278",
+      "value": "WHITE FISH"
+    }, {
+      "id": "8763ae02-8053-4ab2-ae8e-dd01ad4c3a55",
+      "key": "55154-4788",
+      "value": "DILTIAZEM HYDROCHLORIDE"
+    }, {
+      "id": "1950c39e-319a-451e-bde1-f3398aab93c9",
+      "key": "43353-344",
+      "value": "METFORMIN HYDROCHLORIDE"
+    }, {
+      "id": "d142d689-b81d-4083-8c87-45f9c4837d57",
+      "key": "16571-431",
+      "value": "ATENOLOL"
+    }, {
+      "id": "f829c123-e278-46d0-8462-9e766bb51266",
+      "key": "68180-516",
+      "value": "LISINOPRIL"
+    }, {
+      "id": "e2bc9641-1987-484c-ab93-8c5531cc503a",
+      "key": "31382-753",
+      "value": "MEPIVACAINE HYDROCHLORIDE"
+    }, {
+      "id": "83ce06e7-c7d8-4bc4-b4fc-ea42c1ca741e",
+      "key": "63629-3066",
+      "value": "OXYCODONE AND ACETAMINOPHEN"
+    }, {
+      "id": "a733610b-855f-4b4f-9fee-2df27d80965e",
+      "key": "36800-235",
+      "value": "ETHYL ALCOHOL"
+    }, {
+      "id": "192281ad-3e70-4a8d-a986-b222f228ae29",
+      "key": "0409-4093",
+      "value": "CHROMIC CHLORIDE"
+    }, {
+      "id": "875d80ff-d11f-4f64-a884-e499b413619b",
+      "key": "59779-441",
+      "value": "DOXYLAMINE SUCCINATE"
+    }, {
+      "id": "0624cd5e-2d33-4d93-b631-1592393ed978",
+      "key": "36987-2518",
+      "value": "AMERICAN BEECH"
+    }, {
+      "id": "6c6bb089-c288-4c3c-b4d6-5c2282704892",
+      "key": "63323-170",
+      "value": "SODIUM PHOSPHATE, MONOBASIC, MONOHYDRATE"
+    }, {
+      "id": "ffd545da-a623-497b-85da-553a1d6467fe",
+      "key": "42254-205",
+      "value": "OLANZAPINE"
+    }, {
+      "id": "d35204df-d622-4f67-95bf-3e0e20e4fcfe",
+      "key": "0338-0553",
+      "value": "SODIUM CHLORIDE"
+    }, {
+      "id": "8d7c326a-cc55-4895-869e-3d22530b7f60",
+      "key": "63629-1342",
+      "value": "DOCUSATE SODIUM AND SENNA"
+    }, {
+      "id": "d64e830b-8191-4a8f-b5d6-0b955a4211ea",
+      "key": "49349-092",
+      "value": "GLIPIZIDE"
+    }, {
+      "id": "20d6e021-2f2b-4d75-85b6-1e0b1ef52a8f",
+      "key": "63629-3226",
+      "value": "BISOPROLOL FUMARATE AND HYDROCHLOROTHIAZIDE"
+    }, {
+      "id": "e4b4dfdd-2b96-4e72-8cae-fad4a8562227",
+      "key": "33261-813",
+      "value": "GLYBURIDE"
+    }, {
+      "id": "c125d23e-224f-4415-8b94-0e0a15e57530",
+      "key": "61919-125",
+      "value": "IBUPROFEN"
+    }, {
+      "id": "01840d40-8a93-4d48-9fcc-f416a3f93942",
+      "key": "33261-869",
+      "value": "SPIRONOLACTONE"
+    }, {
+      "id": "cdc58665-90bd-409b-8b43-f5f212361c48",
+      "key": "52544-046",
+      "value": "PODOFILOX"
+    }, {
+      "id": "58e65809-931d-4f12-8b8e-d32c66c090fc",
+      "key": "66302-300",
+      "value": "TREPROSTINIL"
+    }, {
+      "id": "3da3b8d0-d8f3-40ab-adfe-4e20b4726299",
+      "key": "35356-787",
+      "value": "OXYCODONE HYDROCHLORIDE"
+    }, {
+      "id": "3901f826-c3f7-4892-b79f-92af99a14b9e",
+      "key": "69106-110",
+      "value": "DIMETHICONE"
+    }, {
+      "id": "b01cd2f6-a71b-422b-b886-e1851ae91693",
+      "key": "52083-482",
+      "value": "ACETAMINOPHEN, DEXBROMPHENIRAMINE"
+    }, {
+      "id": "3c35ed18-a1a1-4c58-bd12-89fafaf8631c",
+      "key": "76472-1161",
+      "value": "SEPIA OFFICINALIS JUICE"
+    }, {
+      "id": "5ba74fe2-36bd-4d58-8214-ad5ac8fe49d2",
+      "key": "59886-315",
+      "value": "AVOBENZONE, OCTINOXATE, OCTISALATE, OCTOCRYLENE, OXYBENZONE"
+    }, {
+      "id": "dfbeef33-80e2-4c8b-b802-6235ac54daa4",
+      "key": "54632-003",
+      "value": "OXYGEN"
+    }, {
+      "id": "b11e61dc-da32-4a3e-9a16-74b943260713",
+      "key": "24658-240",
+      "value": "LISINOPRIL"
+    }, {
+      "id": "cb4ae91a-0348-469b-9b17-db2751c7dffb",
+      "key": "61957-2131",
+      "value": "OCTINOXATE, OXYBENZONE"
+    }, {
+      "id": "78737efc-b7a6-427b-b14a-b3b9c9075348",
+      "key": "61589-3814",
+      "value": "OCTINOXATE AND TITANIUM DIOXIDE"
+    }, {
+      "id": "a27ab18e-f5ff-4c49-8e9d-24b4eee25696",
+      "key": "67386-820",
+      "value": "DROXIDOPA"
+    }, {
+      "id": "04411a89-34a6-4426-b0e4-f20cb22922d9",
+      "key": "54868-5009",
+      "value": "ESTRADIOL"
+    }, {
+      "id": "6c7d0fe2-dbd4-4bd9-ae30-e6e87ec91233",
+      "key": "11673-248",
+      "value": "IBUPROFEN"
+    }, {
+      "id": "969d2eff-4c31-4ac5-8db3-4ca65fabca89",
+      "key": "50078-201",
+      "value": "BENZALKONIUM CHLORIDE"
+    }, {
+      "id": "760498a5-929e-42ae-8154-075e1e8d2bf0",
+      "key": "21695-795",
+      "value": "OMEGA-3-ACID ETHYL ESTERS"
+    }, {
+      "id": "a1cbeddd-e506-4237-a31e-0007ce046ad0",
+      "key": "0019-9180",
+      "value": "GALLIUM CITRATE GA-67"
+    }, {
+      "id": "70974b6a-9311-45f5-a78b-81dddaf755d8",
+      "key": "54569-3701",
+      "value": "MEDROXYPROGESTERONE ACETATE"
+    }, {
+      "id": "c92b34b4-e30b-4798-909a-d004cdc7bfc0",
+      "key": "52559-576",
+      "value": "TRICLOSAN"
+    }, {
+      "id": "2e8c0844-1316-463d-bdbf-b1324cfa1dd0",
+      "key": "54365-400",
+      "value": "CHLORHEXIDINE GLUCONATE AND ISOPROPYL ALCOHOL"
+    }, {
+      "id": "12a446f2-1136-48b2-a100-f00294ab8c0a",
+      "key": "53727-101",
+      "value": "TITANIUM DIOXIDE, ZINC OXIDE"
+    }, {
+      "id": "f6d3bb95-da96-463b-a10a-29ff1841ed59",
+      "key": "43857-0112",
+      "value": "ARALIA QUINQUEFOLIA, AVENA SATIVA, CAPSICUM ANNUUM, GINKGO BILOBA, GLYCYRRHIZA GLABRA, HYDROCOTYLE ASIATICA"
+    }, {
+      "id": "faa836c1-ebf6-44d5-a375-15ac813b2cb3",
+      "key": "33261-464",
+      "value": "AMOXICILLIN AND CLAVULANATE POTASSIUM"
+    }, {
+      "id": "ab1e4424-91b8-475b-8cd9-80de5d5fc6f1",
+      "key": "56153-001",
+      "value": "SODIUM MONOFLUOROPHOSPHATE"
+    }, {
+      "id": "063a8786-6225-4d0a-af1b-81fb9767b673",
+      "key": "42002-516",
+      "value": "SODIUM FLUORIDE"
+    }, {
+      "id": "54182e9f-2443-4020-a983-1fa4a55df310",
+      "key": "57520-0235",
+      "value": "CANDIDA ALBICANS"
+    }, {
+      "id": "bc8e02a7-c00a-4cc3-9095-488ff6f88d9c",
+      "key": "0573-0160",
+      "value": "IBUPROFEN"
+    }, {
+      "id": "fcbbbdcb-0936-48c1-8361-856054a13d44",
+      "key": "76420-760",
+      "value": "LIDOCAINE, KENALOG, POVIDONE IODINE"
+    }, {
+      "id": "d9742878-ba3d-487f-950b-6a4ba07b9525",
+      "key": "49726-017",
+      "value": "ACONITUM NAPELLUS, BROMIUM, COCCUS CACTI, CORALLIUM RUBRUM, CUPRUM METALLICUM, DROSERA ROTUNDIFOLIA, HEPAR SULPHURIS CALCAREUM, IODIUM, MEPHITIS MEPHITICA, SPONGIA TOSTA"
+    }, {
+      "id": "f83a9442-a9ba-4da8-8d66-5cdfddc9749d",
+      "key": "61715-050",
+      "value": "MICONAZOLE"
+    }, {
+      "id": "b8abb6f1-a47c-43a6-993f-ef32b7d60f10",
+      "key": "51672-4088",
+      "value": "FLUCONAZOLE"
+    }, {
+      "id": "49e1906d-f495-4b83-9b56-4df234f7a239",
+      "key": "50419-828",
+      "value": "DESONIDE"
+    }, {
+      "id": "e8aefd8a-d7e4-4b72-82ee-4f0e5d1806e7",
+      "key": "12462-600",
+      "value": "ETHYL ALCOHOL"
+    }, {
+      "id": "043d5358-06a1-4ed0-bf30-d8e95c0778f4",
+      "key": "65044-3305",
+      "value": "HAZELNUT (FILBERT) CORYLUS SPP."
+    }, {
+      "id": "ae053bcf-b95f-4f7b-bdda-5b0c0b605e10",
+      "key": "63739-570",
+      "value": "SIMVASTATIN"
+    }, {
+      "id": "6c0517c5-5587-4c7f-bce4-50ed78d1590f",
+      "key": "63739-284",
+      "value": "DILTIAZEM HYDROCHLORIDE"
+    }, {
+      "id": "6834f58e-2fe8-49f1-92e6-ebc15db69478",
+      "key": "68382-536",
+      "value": "POTASSIUM CITRATE"
+    }, {
+      "id": "e53c3362-79cd-446c-8c3d-8d1523ac689a",
+      "key": "65862-287",
+      "value": "PERINDOPRIL ERBUMINE"
+    }, {
+      "id": "78679a0b-a25d-448e-b4a3-d3704f0ddfef",
+      "key": "0409-4166",
+      "value": "ISOLEUCINE, LEUCINE, LYSINE ACETATE, METHIONINE, PHENYLALANINE, THREONINE, TRYPTOPHAN, VALINE, ARGININE, AND HISTIDINE"
+    }, {
+      "id": "3d6c73d1-d28e-4cd5-b9ca-e390d80dc6c3",
+      "key": "62802-295",
+      "value": "AVOBENZONE, HOMOSALATE, OCTISALATE, OXYBENZONE, OCTOCRYLENE"
+    }, {
+      "id": "5cfa168d-9996-422b-b360-7149005756e8",
+      "key": "59762-3720",
+      "value": "ALPRAZOLAM"
+    }, {
+      "id": "53036e32-7ea0-4acb-a0ef-087f5dc711a4",
+      "key": "49288-9935",
+      "value": "GLYCERINE"
+    }, {
+      "id": "b6c9d7c6-a52e-4542-9607-ae9a16e908a3",
+      "key": "57955-6166",
+      "value": "NATURAL MEDICINE"
+    }, {
+      "id": "76682aa9-290d-40af-9c84-aedca36d6103",
+      "key": "42254-171",
+      "value": "ZIPRASIDONE HYDROCHLORIDE"
+    }, {
+      "id": "78182964-ec98-421d-8e95-2da04076855b",
+      "key": "0264-7636",
+      "value": "DEXTROSE, SODIUM CHLORIDE, AND POTASSIUM CHLORIDE"
+    }, {
+      "id": "54beb25f-05a7-4d88-8858-a9816da84a9f",
+      "key": "67345-0013",
+      "value": "OCTINOXATE"
+    }, {
+      "id": "783b04f0-25c9-4d46-ab45-1bde26d0ad91",
+      "key": "0006-3931",
+      "value": "TAFLUPROST"
+    }, {
+      "id": "c02ea2e5-d6bb-4d4d-9b66-16e6603cd00b",
+      "key": "0615-6558",
+      "value": "SERTRALINE HYDROCHLORIDE"
+    }, {
+      "id": "0c0d7750-5811-478e-a741-13a1f574ddeb",
+      "key": "0409-4713",
+      "value": "LIDOCAINE HYDROCHLORIDE"
+    }, {
+      "id": "9d05b6b8-7f63-41ed-91fd-c4b4eab0c32c",
+      "key": "63874-489",
+      "value": "NAPROXEN SODIUM"
+    }],
   "employee": [
     {"id":"c118c07a-afc9-4a85-b29b-f9afb1ea9958","key":"U03510","value":"MARIA COOK"},
     {"id":"3bf54c0f-04e9-4df5-a665-edd8a65da631","key":"U13860","value":"ANGELA DAVIS"},

@@ -5,6 +5,8 @@ import InputText from './InputText';
 import InputLookup from './InputLookup';
 import InputSelect from './InputSelect';
 import InputDetail from './InputDetail';
+import InputDate from './InputDate';
+import InputCheckbox from './InputCheckbox';
 
 export default class FieldType extends Enum {}
 
@@ -28,6 +30,9 @@ FieldType.initEnum({
   },(props) => {
      return <InputText {...props} />;
   }),
+  CHECKBOX: enumBody({},(props) => {
+     return <InputCheckbox {...props} />
+  }),
   RICH_TEXT: enumBody(),
   EMAIL: enumBody(),
   PHONE: enumBody(),
@@ -35,7 +40,9 @@ FieldType.initEnum({
     decimals: 0
   }),
   CURRENCY: enumBody(),
-  DATE: enumBody(),
+  DATE: enumBody({},(props) => {
+    return <InputDate {...props} />;
+  }),
   DATETIME: enumBody(),
   TIMESTAMP: enumBody(),
   SELECT: enumBody({},(props) => {

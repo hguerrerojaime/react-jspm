@@ -4,6 +4,7 @@ import Bindable from 'react-jspm/forms/Bindable';
 import FormGroup from 'react-jspm/forms/FormGroup';
 import Field from 'react-jspm/forms/Field';
 import FieldType from 'react-jspm/forms/FieldType';
+import { DetailColumn } from 'react-jspm/forms/InputDetail';
 
 export default class InvoiceForm extends Bindable {
 
@@ -24,6 +25,18 @@ export default class InvoiceForm extends Bindable {
             case="upper"
           />
         </FormGroup>
+        <FormGroup label="Date">
+          <Field type={FieldType.DATE}
+            stateHolder={this.props.stateHolder}
+            model="form.date"
+          />
+        </FormGroup>
+        <FormGroup label="Boolean">
+          <Field type={FieldType.CHECKBOX}
+            stateHolder={this.props.stateHolder}
+            model="form.active"
+          />
+        </FormGroup>
         <FormGroup label="Color">
           <Field type={FieldType.SELECT}
             stateHolder={this.props.stateHolder}
@@ -35,7 +48,20 @@ export default class InvoiceForm extends Bindable {
           <Field type={FieldType.DETAIL}
             stateHolder={this.props.stateHolder}
             model="form.items"
-          />
+          >
+             <DetailColumn
+                  field="effectiveDate"
+                  fieldType={FieldType.DATE}
+                  label="Effective Date"
+             />
+             <DetailColumn
+                  field="drug"
+                  fieldType={FieldType.LOOKUP}
+                  label="Drug"
+                  domainObject="drug"
+
+              />
+          </Field>
         </FormGroup>
       </div>
     );

@@ -19,14 +19,12 @@ export default class NewInvoice extends React.Component {
     super(props);
     this.state = {
        form: {
-         supervisor: {
-            id: "1234",
-            key: "U57605",
-            value: "PANCHO PISTOLAS"
-         },
+         supervisor: null,
          description: "HI",
          color: null,
-         items: []
+         items: [],
+         active: false,
+         date: undefined
        }
     };
 

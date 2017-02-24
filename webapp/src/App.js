@@ -3,6 +3,6 @@ import AdminPanel from './AdminPanel';
 
 export default class App extends React.Component {
   render() {
-     return <AdminPanel />;
+     return <AdminPanel>{this.props.children}</AdminPanel>;
   }
 }

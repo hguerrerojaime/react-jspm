@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import resolver from 'react-jspm/core/di';
 import App from './App';
 
-
+import router from 'react-jspm/core/router';
 
 import 'font-awesome/css/font-awesome.min.css!';
 import 'jquery';
@@ -15,6 +15,6 @@ resolver.inject(React);
 
 
 ReactDOM.render(
-  <App />,
+  router(),
   document.getElementById('app')
 );

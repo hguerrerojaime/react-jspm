@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router'
+
 export default class MenuItem extends React.Component {
 
   render() {
@@ -8,10 +10,10 @@ export default class MenuItem extends React.Component {
 
     return (
       <li className={ this.props.className }>
-          <a href={ this.props.href }>
+          <Link to={ this.props.href }>
             { icon }
             { this.props.children }
-          </a>
+          </Link>
       </li>
     );
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import AppMenu from './admin-panel/AppMenu';
-import AppBody from './admin-panel/AppBody';
 
 import $ from 'jquery';
 
@@ -13,7 +12,7 @@ export default class AdminPanel extends React.Component {
             <AppMenu />
             <div id="page-wrapper" style={{ minHeight: "261px"}}>
               <div>
-                <AppBody />
+                {this.props.children}
               </div>
             </div>
             <div id="alert-wrapper"></div>

@@ -54,6 +54,9 @@ export default class InputText extends Bindable {
     $(this.nativeInput).select();
   }
 
+  getInitialValue() {
+    return "";
+  }
 
 }
 

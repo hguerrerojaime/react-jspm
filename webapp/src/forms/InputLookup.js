@@ -10,42 +10,84 @@ import Well from 'react-jspm/commons/Well';
 import DivRow from 'react-jspm/commons/DivRow';
 import DivCol from 'react-jspm/commons/DivCol';
 import Form from './Form';
-
+import Label from 'react-jspm/commons/Label';
+import Icon from 'react-jspm/commons/Icon';
 import update from 'react-addons-update';
 import InlineLoader from 'react-jspm/commons/InlineLoader';
+
+let labelStyle = {
+  display:"inline-block",
+  maxWidth:"100%",
+  overflow:"hidden",
+  textOverflow:"ellipsis",
+  whiteSpace:"nowrap",
+  verticalAlign:"middle"
+};
 
 
 export default class InputLookup extends Bindable {
 
   constructor(props) {
     super(props);
-    this.state = { lookup:this.binder.value };
+
+    this.state = {
+      lookup: this.initLookup()
+    };
+
     this.showLookupModal = this.showLookupModal.bind(this);
     this.updateSelected = this.updateSelected.bind(this);
     this.lookupKey = this.lookupKey.bind(this);
     this.service = this.props.di(this.props.lookupService);
 
+
+
+  }
+
+  initLookup() {
+     return {
+       id:null,
+       key:"",
+       value:null
+     };
+  }
+
+  resetLookup() {
+    this.binder.value = null;
+    this.state = { lookup: this.initLookup() };
+//
+  }
+
+  componentDidMount() {
+
+    if (this.hasModel() && !this.binder.value) {
+      this.binder.value = {};
+    }
+
+    this.setState({ lookup:this.binder.value });
+
   }
 
   render() {
     return (
-      <DivRow>
-        <DivCol width="6">
+      <div>
+      <DivRow style={ {paddingBottom: "5px" }}>
+        <DivCol>
           <InputGroup>
              <InputText
                 ref={(txtLookup) => this.txtLookup = txtLookup }
                 stateHolder={this}
                 model="lookup.key"
+                onChange={(evt) => {
+
+                   if (evt.target.value == "") {
+                     this.resetLookup();
+                   }
+                }}
              />
              <InputGroupAddon type="btn">
                 <Button icon="fa fa-search" brand="info" onClick={this.showLookupModal} />
              </InputGroupAddon>
           </InputGroup>
-        </DivCol>
-        <DivCol width="6">
-          <div className="form-control">
-            {this.state.lookup.value}
-          </div>
         </DivCol>
         <LookupModal
             parent={this}
@@ -53,11 +95,29 @@ export default class InputLookup extends Bindable {
             ref={(lookupModal) => this.lookupModal = lookupModal}
         />
       </DivRow>
+      <DivRow>
+        <DivCol>
+          <h4>
+          <Label brand={this.getLookupValueBrand()} style={labelStyle}>
+              {this.getLookupValue()}
+
+          </Label>
+          </h4>
+        </DivCol>
+      </DivRow>
+      </div>
     );
   }
 
   showLookupModal() {
     this.lookupModal.show();
+  }
+
+  getLookupValue() {
+     return this.state.lookup.id ? this.state.lookup.value : "No Value";
+  }
+  getLookupValueBrand() {
+    return this.state.lookup.id ? "success" : "default";
   }
 
   lookupKey() {

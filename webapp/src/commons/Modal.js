@@ -79,25 +79,32 @@ export default class Modal extends React.Component {
     });
 
     $(document).on('show.bs.modal', '.modal', function (event) {
-        var zIndex = 1040 + (10 * jQuery('.modal:visible').length);
 
-        let $this = $(this);
+        if (event.target.classList.contains("modal")) {
 
-        $this.css('z-index', zIndex);
+          var zIndex = 1040 + (10 * jQuery('.modal:visible').length);
 
-        setTimeout(function() {
-            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-            $('.modal.in .modal-dialog').addClass('aside');
+          var $this = $(this);
 
-            let stackCount = $('.modal.in').length;
+          $this.css('z-index', zIndex);
 
-            $this.find('.modal-dialog').removeClass('aside');
-            $this.addClass('modal-stack-'+stackCount);
+          setTimeout(function() {
+              $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+              $('.modal.in .modal-dialog').addClass('aside');
+
+              let stackCount = $('.modal.in').length;
+
+              $this.find('.modal-dialog').removeClass('aside');
+              $this.addClass('modal-stack-'+stackCount);
 
 
-        }, 0);
+          }, 0);
+
+          jqElement.appendTo('body');
+
+        }
+
     });
-
 
   }
 

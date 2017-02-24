@@ -10,17 +10,11 @@ export default class Sidebar extends React.Component {
           <div className="sidebar-nav navbar-collapse">
               <ul className="nav in" id="side-menu">
                  <SidebarSearch />
-                 <MenuItem icon="fam fam-user" className="menu-item" href="javascript:void(0);">
-                    Dashboard
+                 <MenuItem icon="fam fam-house" className="menu-item" href="/">
+                    Home
                  </MenuItem>
-                 <MenuItem className="menu-item" href="javascript:void(0);">
+                 <MenuItem icon="fam fam-application-form" className="menu-item" href="invoice">
                     Forms
-                 </MenuItem>
-                 <MenuItem className="menu-item" href="javascript:void(0);">
-                    UI Elements
-                 </MenuItem>
-                 <MenuItem className="menu-item" href="javascript:void(0);">
-                    XYZ
                  </MenuItem>
               </ul>
           </div>

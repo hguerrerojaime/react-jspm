@@ -28,6 +28,7 @@ SystemJS.config({
   map: {
     "assert": "npm:jspm-nodelibs-assert@0.2.0",
     "bootstrap": "github:twbs/bootstrap@3.3.7",
+    "bootstrap-datepicker": "npm:bootstrap-datepicker@1.6.4",
     "buffer": "npm:jspm-nodelibs-buffer@0.2.1",
     "child_process": "npm:jspm-nodelibs-child_process@0.2.0",
     "component-emitter": "npm:component-emitter@1.2.1",
@@ -51,6 +52,7 @@ SystemJS.config({
     "react-binding": "npm:react-binding@0.9.1",
     "react-di": "npm:react-di@0.3.1",
     "react-dom": "npm:react-dom@15.4.2",
+    "react-router": "npm:react-router@3.0.2",
     "stream": "npm:jspm-nodelibs-stream@0.2.0",
     "string_decoder": "npm:jspm-nodelibs-string_decoder@0.2.0",
     "superagent": "npm:superagent@3.4.2",
@@ -154,7 +156,7 @@ SystemJS.config({
     },
     "npm:stream-browserify@2.0.1": {
       "map": {
-        "readable-stream": "npm:readable-stream@2.2.2",
+        "readable-stream": "npm:readable-stream@2.2.3",
         "inherits": "npm:inherits@2.0.3"
       }
     },
@@ -231,7 +233,7 @@ SystemJS.config({
     },
     "npm:browserify-zlib@0.1.4": {
       "map": {
-        "readable-stream": "npm:readable-stream@2.2.2",
+        "readable-stream": "npm:readable-stream@2.2.3",
         "pako": "npm:pako@0.2.9"
       }
     },
@@ -274,7 +276,7 @@ SystemJS.config({
     "npm:stream-http@2.6.3": {
       "map": {
         "inherits": "npm:inherits@2.0.3",
-        "readable-stream": "npm:readable-stream@2.2.2",
+        "readable-stream": "npm:readable-stream@2.2.3",
         "to-arraybuffer": "npm:to-arraybuffer@1.0.1",
         "builtin-status-codes": "npm:builtin-status-codes@3.0.0",
         "xtend": "npm:xtend@4.0.1"
@@ -403,6 +405,55 @@ SystemJS.config({
         "inherits": "npm:inherits@2.0.3",
         "brorand": "npm:brorand@1.0.7",
         "hash.js": "npm:hash.js@1.0.3"
+      }
+    },
+    "npm:bootstrap-datepicker@1.6.4": {
+      "map": {
+        "jquery": "npm:jquery@3.1.1"
+      }
+    },
+    "npm:react-router@3.0.2": {
+      "map": {
+        "warning": "npm:warning@3.0.0",
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "hoist-non-react-statics": "npm:hoist-non-react-statics@1.2.0",
+        "invariant": "npm:invariant@2.2.2",
+        "history": "npm:history@3.2.1"
+      }
+    },
+    "npm:warning@3.0.0": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1"
+      }
+    },
+    "npm:invariant@2.2.2": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1"
+      }
+    },
+    "npm:history@3.2.1": {
+      "map": {
+        "loose-envify": "npm:loose-envify@1.3.1",
+        "invariant": "npm:invariant@2.2.2",
+        "warning": "npm:warning@3.0.0",
+        "query-string": "npm:query-string@4.3.2"
+      }
+    },
+    "npm:query-string@4.3.2": {
+      "map": {
+        "object-assign": "npm:object-assign@4.1.1",
+        "strict-uri-encode": "npm:strict-uri-encode@1.1.0"
+      }
+    },
+    "npm:readable-stream@2.2.3": {
+      "map": {
+        "inherits": "npm:inherits@2.0.3",
+        "util-deprecate": "npm:util-deprecate@1.0.2",
+        "string_decoder": "npm:string_decoder@0.10.31",
+        "buffer-shims": "npm:buffer-shims@1.0.0",
+        "process-nextick-args": "npm:process-nextick-args@1.0.7",
+        "isarray": "npm:isarray@1.0.0",
+        "core-util-is": "npm:core-util-is@1.0.2"
       }
     }
   }
