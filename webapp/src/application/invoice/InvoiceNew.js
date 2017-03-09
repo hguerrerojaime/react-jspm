@@ -38,6 +38,7 @@ export default class NewInvoice extends React.Component {
           <Well size="sm">
             <RecordActionBar mode="new" />
           </Well>
+          <hr />
           <fieldset>
           <legend>Form Data</legend>
           <InvoiceForm stateHolder={this} />

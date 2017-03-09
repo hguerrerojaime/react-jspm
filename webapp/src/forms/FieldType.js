@@ -7,6 +7,7 @@ import InputSelect from './InputSelect';
 import InputDetail from './InputDetail';
 import InputDate from './InputDate';
 import InputCheckbox from './InputCheckbox';
+import OutputLabel from './OutputLabel';
 
 export default class FieldType extends Enum {}
 
@@ -20,6 +21,9 @@ function enumBody(defaultProps = {}, componentBuilder = (props)=>{}) {
 }
 
 FieldType.initEnum({
+  AUTO_NUMBER: enumBody({},(props) => {
+      return <OutputLabel {...props} />;
+  }),
   TEXT: enumBody({
     case: null
   },(props) => {

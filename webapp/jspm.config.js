@@ -15,6 +15,20 @@ SystemJS.config({
           }
         }
       }
+    },
+    "dynabis": {
+      "format": "esm",
+      "meta": {
+        "*.js": {
+          "loader": "plugin-babel",
+          "babelOptions": {
+            "es2015": true,
+            "plugins": [
+              "babel-plugin-transform-react-jsx"
+            ]
+          }
+        }
+      }
     }
   }
 });
