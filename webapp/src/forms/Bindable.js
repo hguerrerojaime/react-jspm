@@ -7,46 +7,72 @@ export default class Bindable extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
 
-    if (this.hasModel()) {
-      this.binder = this.createBinder();
-    }
+
 
   }
 
-  handleChange(evt) {
-    this.props.onChange(evt);
+  componentWillMount() {
     if (this.hasModel()) {
-      this.binder.value = evt.target.value;
+      this.binder = this.loadBinder();
     }
   }
 
-  createBinder() {
+  componentWillUpdate() {
+    if (this.hasModel()) {
+      this.binder = this.loadBinder();
+    }
+  }
+
+  loadBinder() {
 
     let binder = null;
     let stateHolder = this.props.stateHolder;
     let model = this.props.model;
-    let paths = model.split(".",2);
+    let paths = model.split(/\.(.+)/,2);
     let basePath = paths[0];
 
     if (paths.length > 1) {
        let secondaryPath = paths[1];
 
-       if (!this.props.stateHolder.state[basePath]) {
-          this.props.stateHolder.state[basePath] = {
-            [secondaryPath]:this.getInitialValue()
-          };
-       } else if (!this.props.stateHolder.state[basePath][secondaryPath]) {
-          this.props.stateHolder.state[basePath][secondaryPath] = this.getInitialValue();
+       if (this.props.parentBinder) {
+         binder = Binder.bindTo(this.props.parentBinder,basePath, secondaryPath);
+       } else {
+
+        //  if (!this.props.stateHolder.state[basePath]) {
+        //     this.props.stateHolder.state[basePath] = {
+        //       [secondaryPath]:this.getInitialValue()
+        //     };
+        //  } else if (!this.props.stateHolder.state[basePath][secondaryPath]) {
+        //     this.props.stateHolder.state[basePath][secondaryPath] = this.getInitialValue();
+        //  }
+
+         binder = Binder.bindToState(stateHolder,basePath,secondaryPath);
        }
 
-       binder = Binder.bindToState(stateHolder,basePath,secondaryPath);
     }
 
     return binder;
   }
 
+
+
+  handleChange(evt) {
+    this.props.onChange(evt);
+    if (this.hasModel()) {
+      this.setValue(evt.target.value);
+    }
+  }
+
   hasModel() {
-    return this.props.stateHolder && this.props.model;
+    return (this.props.stateHolder || this.props.parentBinder) && this.props.model;
+  }
+
+  setValue(value) {
+     this.binder.value = value;
+  }
+
+  getValue() {
+     return this.binder.value
   }
 
   getInitialValue() {

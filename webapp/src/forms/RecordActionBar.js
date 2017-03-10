@@ -7,6 +7,7 @@ export default class RecordActionBar extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.actions = {
       "new": (
          <div>
@@ -26,7 +27,7 @@ export default class RecordActionBar extends React.Component {
       ),
       "show": (
          <div>
-           <LinkButton label="Edit" brand="success" icon="fa fa-pencil" />
+           <LinkButton label="Edit" brand="success" icon="fa fa-pencil" href={"/provider/"+this.props.params.id+"/edit"} />
            { " " }
            <LinkButton label="Clone" icon="fa fa-clone" />
            { " " }

@@ -9,9 +9,8 @@ export default class OutputLabel extends Bindable {
   }
 
   render() {
-
     return (
-      <div className="form-control">{this.binder.value}</div>
+      <div className="form-control">{this.getValue()}</div>
     );
   }
 

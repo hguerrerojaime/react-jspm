@@ -12,6 +12,7 @@ import DivCol from 'react-jspm/commons/DivCol';
 import Form from './Form';
 import Label from 'react-jspm/commons/Label';
 import Icon from 'react-jspm/commons/Icon';
+import resolver from 'react-jspm/core/di';
 import update from 'react-addons-update';
 import InlineLoader from 'react-jspm/commons/InlineLoader';
 
@@ -37,7 +38,7 @@ export default class InputLookup extends Bindable {
     this.showLookupModal = this.showLookupModal.bind(this);
     this.updateSelected = this.updateSelected.bind(this);
     this.lookupKey = this.lookupKey.bind(this);
-    this.service = this.props.di(this.props.lookupService);
+    this.service = resolver.get(this.props.lookupService);
 
 
 

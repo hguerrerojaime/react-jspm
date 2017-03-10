@@ -11,9 +11,6 @@ import 'font-awesome/css/font-awesome.min.css!';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
 
-resolver.inject(React);
-
-
 ReactDOM.render(
   router(),
   document.getElementById('app')

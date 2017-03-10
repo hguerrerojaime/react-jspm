@@ -28,7 +28,7 @@ export default class RecordService extends Service {
     ;
   }
 
-  show(id) {
+  get(id) {
     return request.get(this.props.serviceUrl+"/rec/"+id).
        then((response) => response.body)
     ;

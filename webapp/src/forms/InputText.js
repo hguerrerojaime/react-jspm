@@ -16,7 +16,7 @@ export default class InputText extends Bindable {
           ref={(nativeInput) => this.nativeInput = nativeInput}
           className={"form-control input-"+this.props.size+" "+this.props.className}
           onChange={ this.handleChange }
-          value={ this.binder.value }
+          value={ this.getValue() }
           onBlur={ this.props.onBlur }
           placeholder={ this.props.placeholder }
           onKeyPress={ this.props.onKeyPress }
@@ -25,23 +25,21 @@ export default class InputText extends Bindable {
   }
 
   componentDidMount() {
-    this.configTextCase(this.binder);
+    this.configTextCase(this.getValue());
   }
 
   handleChange(evt) {
-      this.configTextCase(evt.target);
+      this.configTextCase(evt.target.value);
       super.handleChange(evt);
   }
 
-  configTextCase(valueHolder) {
-
-    let value = valueHolder.value;
+  configTextCase(value) {
 
     if (value) {
       if (this.props.case == "upper") {
-         valueHolder.value = value.toUpperCase();
+         this.setValue(value.toUpperCase());
       } else if (this.props.case == "lower") {
-         valueHolder.value = value.toLowerCase();
+         vthis.setValue(value.toLowerCase());
       }
     }
   }

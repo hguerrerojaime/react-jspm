@@ -13,7 +13,7 @@ export default class Sidebar extends React.Component {
                  <MenuItem icon="fam fam-house" className="menu-item" href="/">
                     Home
                  </MenuItem>
-                 <MenuItem icon="fam fam-application-form" className="menu-item" href="invoice">
+                 <MenuItem icon="fam fam-application-form" className="menu-item" href="provider">
                     Forms
                  </MenuItem>
               </ul>
