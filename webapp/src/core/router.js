@@ -5,10 +5,10 @@ import App from 'react-jspm/App';
 import InvoiceNew from 'react-jspm/application/invoice/InvoiceNew';
 import Index from 'react-jspm/application/index/Index';
 
-import Provider__c_List from 'dynabis/58bf041d5572472c343ffcc3/lc';
-import Provider__c_New from 'dynabis/l/58c193dc557247095434b11b/new';
-import Provider__c_Show from 'dynabis/l/58c193dc557247095434b11b/show';
-import Provider__c_Edit from 'dynabis/l/58c193dc557247095434b11b/edit';
+import Provider__c_List from 'dynabis/58c43dda9740a624d8f973df/lc';
+import Provider__c_New from 'dynabis/l/58c43f589740a624d8f973e3/new';
+import Provider__c_Show from 'dynabis/l/58c43f589740a624d8f973e3/show';
+import Provider__c_Edit from 'dynabis/l/58c43f589740a624d8f973e3/edit';
 
 let router = () => {
   return (

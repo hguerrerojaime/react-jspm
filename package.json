@@ -4,7 +4,7 @@
   "description": "React with JSPM",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/concurrently --kill-others  \"node_modules/.bin/live-server webapp --entry-file=index.html\" \"node_modules/.bin/json-server --watch mock-rest/db.json\"",
+    "start": "node_modules/.bin/concurrently --kill-others  \"node_modules/.bin/live-server webapp --entry-file=index.html\"",
     "build": "node_modules/.bin/jspm bundle src/react-jspm webapp/build.js"
   },
   "repository": {

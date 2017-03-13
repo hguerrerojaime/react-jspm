@@ -39,7 +39,7 @@ export default class InputText extends Bindable {
       if (this.props.case == "upper") {
          this.setValue(value.toUpperCase());
       } else if (this.props.case == "lower") {
-         vthis.setValue(value.toLowerCase());
+         this.setValue(value.toLowerCase());
       }
     }
   }

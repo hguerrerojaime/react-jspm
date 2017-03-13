@@ -10,7 +10,7 @@ export default class OutputLabel extends Bindable {
 
   render() {
     return (
-      <div className="form-control">{this.getValue()}</div>
+      <div className="form-control read-only">{this.getValue()}</div>
     );
   }
 

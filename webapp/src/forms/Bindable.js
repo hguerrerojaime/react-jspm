@@ -14,6 +14,9 @@ export default class Bindable extends React.Component {
   componentWillMount() {
     if (this.hasModel()) {
       this.binder = this.loadBinder();
+      if (!this.binder.value) {
+        this.binder.value = this.getInitialValue();
+      }
     }
   }
 
